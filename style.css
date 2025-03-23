@@ -1,0 +1,180 @@
+/* Basic reset and layout */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f5f7fa;
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar styling */
+#sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 250px;
+    background: #4a90e2;
+    color: #fff;
+    padding: 20px;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+#sidebar ul {
+    list-style: none;
+}
+#sidebar ul li {
+    margin-bottom: 15px;
+}
+#sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+/* When sidebar is visible */
+.sidebar-visible {
+    transform: translateX(0);
+}
+
+/* Main content styling */
+#main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 0;
+    transition: margin-left 0.3s ease;
+}
+
+header {
+    background: #4a90e2;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+header .icons i {
+    margin-left: 15px;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+#chatWindow {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: #eef2f5;
+}
+
+.chat-bubble {
+    max-width: 70%;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 20px;
+    clear: both;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1em;
+    position: relative;
+}
+
+.user-msg {
+    background: #d0e6ff;
+    float: right;
+    text-align: right;
+}
+
+.bot-msg {
+    background: #dff0d8;
+    float: left;
+    text-align: left;
+}
+
+/* Input Bar styling */
+#inputBar {
+    background: #fff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #ddd;
+}
+
+#inputBar input[type="text"] {
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+}
+
+#sendBtn {
+    background: #4a90e2;
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    margin-left: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.voice-attach i {
+    font-size: 1.2em;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* Mic recording ring effect */
+#micIcon.recording {
+    animation: glow 1.5s infinite;
+    color: red;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px red; }
+    50% { box-shadow: 0 0 15px red; }
+    100% { box-shadow: 0 0 5px red; }
+}
+.speaker-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.speaker-container:hover {
+    color: #333;
+}
+
+.speaker-icon {
+    font-size: 1.2em;
+}
+
+.speaker-text {
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.bot-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}

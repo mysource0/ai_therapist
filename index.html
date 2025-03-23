@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mental Health Chatbot</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Sidebar Menu -->
+  <div id="sidebar" class="sidebar-hidden">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Help</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main">
+    <header>
+      <div class="logo">Mental Health Chatbot</div>
+      <div class="icons">
+        <i class="fas fa-bars" id="menuIcon"></i>
+      </div>
+    </header>
+
+    <!-- Chat window -->
+    <div id="chatWindow">
+      <div class="chat-bubble bot-msg">
+        Hello, how are you feeling today?
+        <i class="fas fa-volume-up speaker-icon" style="margin-left: 20px; border: 1px solid green;"><span style="font-size: 10px;">speak out</span></i>
+      </div>
+    </div>
+
+    <!-- Input Bar --> 
+    <div id="inputBar">
+     
+
+      <input type="text" id="userInput" placeholder="Type your message...">
+      <button id="sendBtn"><i class="fas fa-paper-plane"></i></button>
+      <div class="voice-attach">
+        <i class="fas fa-microphone" id="micIcon"></i>
+        <i class="fas fa-paperclip" id="attachIcon"></i>
+      </div>
+      
+    </div>
+    <button style="padding: 2px; border-radius: 10%; background-color: aliceblue; color: blue;" id="showPredefinedBtn">Show Available Responses</button><br><br><br><br>
+    <div id="output_predef"></div>
+  </div>
+
+</body>
+</html>
